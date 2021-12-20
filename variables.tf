@@ -21,7 +21,7 @@ variable "node_count" {
 
 variable "machine_type" {
   description = "gke machine to be used for a node(defaults to e2.medium)"
-  default     = "e2.medium"
+  default     = "e2-medium"
 }
 
 variable "sa_id" {
