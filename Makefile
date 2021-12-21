@@ -18,7 +18,7 @@ bucket:
 plan:
 	terraform plan -out=plan 
 
-apply:
+apply:plan
 	terraform apply plan 
 
 fmt:
@@ -27,7 +27,6 @@ fmt:
 sa:
 	-gcloud iam service-accounts create $(PROJECT_NAME)
 	gcloud iam service-accounts keys create $(PROJECT_NAME)-service.json --iam-account=$(PROJECT_NAME)@$(PROJECT_NAME).iam.gserviceaccount.com
-        gcloud projects add-iam-policy-binding $PROJECT_NAME --member serviceAccount:$PROJECT_NAME@$PROJECT_NAME.iam.gserviceaccount.com --role roles/editor
 
 
 
